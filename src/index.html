@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Ciallo～(∠・ω< )⌒☆">
-    <title>数·占 | 九宫幻卡 · 联机对决</title>
+    <title>数·占 | 九宫幻卡 (本地版)</title>
     <link rel="icon" href="/favicon.ico">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet" media="print" onload="this.media='all'">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Material+Icons&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
     <script type="importmap">
         { "imports": { "@material/web/": "https://esm.run/@material/web/" } }
     </script>
@@ -20,12 +17,10 @@
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
-
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="ce57a67e-74ab-43cd-8cf8-90c8f408fc5a"></script>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;user-select:none}body{background:linear-gradient(145deg,#e9eff5 0%,#dfe6ed 100%);font-family:'Inter',system-ui,-apple-system,sans-serif;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}.game-container{max-width:1100px;width:100%;background:rgba(255,255,255,.92);border-radius:48px;box-shadow:0 25px 45px -12px rgba(0,0,0,.15),0 2px 6px rgba(0,0,0,.02);padding:20px 24px 28px;transition:all .2s ease;border:1px solid rgba(255,255,255,.5);position:relative}.game-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px}h1{font-size:1.7rem;font-weight:700;background:linear-gradient(135deg,#1e2f3c,#2c4e6e);background-clip:text;-webkit-background-clip:text;color:transparent;display:flex;align-items:center;gap:10px}h1 i{font-size:32px;color:#2c5f8a;background:0 0;-webkit-background-clip:unset;background-clip:unset}.mode-slider-container{background:#eef2f8;border-radius:48px;padding:4px;width:300px;position:relative;display:flex;cursor:default;box-shadow:inset 0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(255,255,255,.8)}.mode-slider-options{display:flex;width:100%;position:relative;z-index:2}.mode-option{flex:1;text-align:center;padding:6px 0;font-weight:500;font-size:.75rem;border-radius:40px;cursor:pointer;color:#5a6874;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .2s;z-index:3}.mode-option i{font-size:18px}.mode-slider-container.active-twoPlayer .mode-option[data-mode=twoPlayer],.mode-slider-container.active-vsAI .mode-option[data-mode=vsAI],.mode-slider-container.active-online .mode-option[data-mode=online]{color:#fff;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,.1);transform:scale(1.03)}.mode-slider-bg{position:absolute;top:4px;left:4px;width:calc(33.33% - 4px);height:calc(100% - 8px);background:linear-gradient(135deg,#2c5f8a,#1f4a6e);border-radius:40px;transition:transform .25s cubic-bezier(.2,.9,.4,1.1);z-index:1;box-shadow:0 2px 6px rgba(0,0,0,.1)}.mode-slider-container.active-vsAI .mode-slider-bg{transform:translateX(100%)}.mode-slider-container.active-online .mode-slider-bg{transform:translateX(200%)}.action-group{display:flex;justify-content:space-between;gap:12px;margin-bottom:16px}.reset-btn,.ai-first-btn,.online-action-btn{background:#f0f4fa;border:none;font-weight:500;font-size:.8rem;padding:8px 18px;border-radius:40px;color:#1f4a6e;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s ease;box-shadow:0 1px 2px rgba(0,0,0,.05)}.reset-btn i,.ai-first-btn i,.online-action-btn i{font-size:18px}.reset-btn:hover,.ai-first-btn:hover,.online-action-btn:hover{background:#e6edf5;transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.05)}.reset-btn:active,.ai-first-btn:active{transform:translateY(1px)}.status-area{background:rgba(248,250,252,.8);border-radius:60px;padding:8px 20px;margin:12px 0 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border:1px solid rgba(255,255,255,.6)}.turn-indicator{display:flex;align-items:center;gap:10px;font-weight:500;font-size:.85rem}.turn-badge{background:#eef2f7;padding:5px 16px;border-radius:32px;font-weight:700;font-size:.85rem;color:#1e2a3a;display:inline-flex;align-items:center;gap:6px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 1px 3px rgba(0,0,0,.05)}.turn-badge i{font-size:16px}.status-message{background:#ffffffcc;padding:5px 16px;border-radius:32px;font-size:.8rem;font-weight:500;color:#2c3e4e;max-width:320px;line-height:1.3;display:flex;align-items:center;gap:6px}.game-layout{display:flex;flex-direction:row;gap:24px;align-items:flex-start}.board{flex:1.2;min-width:240px;max-width:380px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.hand-area{flex:1;min-width:240px;background:rgba(255,255,255,.5);border-radius:32px;padding:14px;box-shadow:0 8px 20px rgba(0,0,0,.04);border:1px solid rgba(255,255,255,.7)}.hand-title{margin-bottom:14px;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;color:#2c5f8a}.hand-title-left{display:flex;align-items:center;gap:4px}.hand-title i{font-size:20px;vertical-align:middle;margin-right:4px}.emoji-toggle-btn{background:0 0;border:none;color:#2c5f8a;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:4px;border-radius:50%;transition:background .2s}.emoji-toggle-btn:hover{background:rgba(44,95,138,.1)}.emoji-toggle-btn i{font-size:24px}
+        *{margin:0;padding:0;box-sizing:border-box;user-select:none}body{background:linear-gradient(145deg,#e9eff5 0%,#dfe6ed 100%);font-family:'Inter',system-ui,-apple-system,sans-serif;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}.game-container{max-width:1100px;width:100%;background:rgba(255,255,255,.92);border-radius:48px;box-shadow:0 25px 45px -12px rgba(0,0,0,.15),0 2px 6px rgba(0,0,0,.02);padding:20px 24px 28px;transition:all .2s ease;border:1px solid rgba(255,255,255,.5);position:relative}.game-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px}h1{font-size:1.7rem;font-weight:700;background:linear-gradient(135deg,#1e2f3c,#2c4e6e);background-clip:text;-webkit-background-clip:text;color:transparent;display:flex;align-items:center;gap:10px}h1 i{font-size:32px;color:#2c5f8a;background:0 0}.mode-slider-container{background:#eef2f8;border-radius:48px;padding:4px;width:300px;position:relative;display:flex;cursor:default;box-shadow:inset 0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(255,255,255,.8)}.mode-slider-options{display:flex;width:100%;position:relative;z-index:2}.mode-option{flex:1;text-align:center;padding:6px 0;font-weight:500;font-size:.75rem;border-radius:40px;cursor:pointer;color:#5a6874;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .2s;z-index:3}.mode-option i{font-size:18px}.mode-slider-container.active-twoPlayer .mode-option[data-mode=twoPlayer],.mode-slider-container.active-vsAI .mode-option[data-mode=vsAI],.mode-slider-container.active-online .mode-option[data-mode=online]{color:#fff;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,.1);transform:scale(1.03)}.mode-slider-bg{position:absolute;top:4px;left:4px;width:calc(33.33% - 4px);height:calc(100% - 8px);background:linear-gradient(135deg,#2c5f8a,#1f4a6e);border-radius:40px;transition:transform .25s cubic-bezier(.2,.9,.4,1.1);z-index:1;box-shadow:0 2px 6px rgba(0,0,0,.1)}.mode-slider-container.active-vsAI .mode-slider-bg{transform:translateX(100%)}.mode-slider-container.active-online .mode-slider-bg{transform:translateX(200%)}.action-group{display:flex;justify-content:space-between;gap:12px;margin-bottom:16px}.reset-btn,.ai-first-btn{background:#f0f4fa;border:none;font-weight:500;font-size:.8rem;padding:8px 18px;border-radius:40px;color:#1f4a6e;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s ease;box-shadow:0 1px 2px rgba(0,0,0,.05)}.reset-btn i,.ai-first-btn i{font-size:18px}.reset-btn:hover,.ai-first-btn:hover{background:#e6edf5;transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.05)}.status-area{background:rgba(248,250,252,.8);border-radius:60px;padding:8px 20px;margin:12px 0 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border:1px solid rgba(255,255,255,.6)}.turn-indicator{display:flex;align-items:center;gap:10px;font-weight:500;font-size:.85rem}.turn-badge{background:#eef2f7;padding:5px 16px;border-radius:32px;font-weight:700;font-size:.85rem;color:#1e2a3a;display:inline-flex;align-items:center;gap:6px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 1px 3px rgba(0,0,0,.05)}.turn-badge i{font-size:16px}.status-message{background:#ffffffcc;padding:5px 16px;border-radius:32px;font-size:.8rem;font-weight:500;color:#2c3e4e;max-width:320px;line-height:1.3;display:flex;align-items:center;gap:6px}.game-layout{display:flex;flex-direction:row;gap:24px;align-items:flex-start}.board{flex:1.2;min-width:240px;max-width:380px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.hand-area{flex:1;min-width:240px;background:rgba(255,255,255,.5);border-radius:32px;padding:14px;box-shadow:0 8px 20px rgba(0,0,0,.04);border:1px solid rgba(255,255,255,.7)}.hand-title{margin-bottom:14px;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;color:#2c5f8a}.hand-title-left{display:flex;align-items:center;gap:4px}.hand-title i{font-size:20px;vertical-align:middle;margin-right:4px}.emoji-toggle-btn{background:0 0;border:none;color:#2c5f8a;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:4px;border-radius:50%;transition:background .2s}.emoji-toggle-btn:hover{background:rgba(44,95,138,.1)}.emoji-toggle-btn i{font-size:24px}
         .emoji-toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(160deg, rgba(255,255,255,0.9) 0%, rgba(245,248,255,0.85) 100%);backdrop-filter:blur(12px);border-radius:32px;padding:24px 32px;box-shadow:0 30px 50px -15px rgba(0,0,0,.18),0 0 0 1px rgba(255,255,255,.6),0 0 0 4px rgba(44,95,138,.04);display:flex;flex-direction:column;align-items:center;gap:12px;z-index:1000;animation:toastPopIn .25s cubic-bezier(.05,.7,.1,1.0);pointer-events:none;border:none;color:#1e3a5f}.emoji-toast.fade-out{animation:toastFadeOut .25s ease-out forwards}@keyframes toastPopIn{0%{opacity:0;transform:translate(-50%,-48%) scale(0.92)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}@keyframes toastFadeOut{0%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-60%) scale(0.95)}}.emoji-toast img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(44,95,138,.15))}.emoji-toast .toast-sender{font-family:'Inter',sans-serif;font-weight:700;font-size:1.1rem;color:#1f4a6e;letter-spacing:-.01em}.emoji-toast .toast-emoji-name{font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;color:#2c5f8a;margin-top:-4px}
-        .cards-hand{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-top:18px;padding-bottom:25px;padding-left:6px;padding-right:6px}.card-slot{aspect-ratio:1/1;background:#fff;border-radius:20px;box-shadow:0 8px 18px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.02);position:relative;cursor:pointer;perspective:1000px}.card-layout{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;padding:6px 4px;box-sizing:border-box;background:inherit;border-radius:inherit;transform-style:preserve-3d}.empty-slot{background:#fefefe;box-shadow:inset 0 0 0 2px #e2e8f0,0 4px 8px rgba(0,0,0,.02);display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#b9c3ce}.card-slot.owner1{background:linear-gradient(145deg,#fff5eb,#ffe6d5);box-shadow:0 8px 18px rgba(230,80,0,.15)}.card-slot.owner2{background:linear-gradient(145deg,#eaf7ff,#d9eefb);box-shadow:0 8px 18px rgba(0,120,230,.15)}.card-top,.card-bottom{text-align:center;font-weight:800;font-size:.9rem;margin:0;color:#2c3e4e;line-height:1.2}.card-middle{flex:1;display:flex;justify-content:space-between;align-items:center;gap:4px;margin:2px 0;min-height:0}.card-left,.card-right{font-weight:800;font-size:.8rem;background:rgba(0,0,0,.05);width:26px;text-align:center;border-radius:20px;padding:2px 0;flex-shrink:0;line-height:1.2}.card-emoji{font-size:1.3rem;flex:1;text-align:center;line-height:1;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 2px 4px rgba(0,0,0,.1))}.card-name-tag{font-size:.55rem;font-weight:600;background:rgba(0,0,0,.05);display:inline-block;padding:2px 5px;border-radius:20px;margin-bottom:3px;text-align:center;width:fit-content;margin-left:auto;margin-right:auto;white-space:nowrap}.inf-symbol{font-size:.9rem;font-weight:800;color:#c44536}.hand-card{width:100%;aspect-ratio:1/1;border-radius:20px;box-shadow:0 4px 10px rgba(0,0,0,.06);background:#fff;position:relative;cursor:pointer;transition:transform .25s cubic-bezier(.175,.885,.32,1.275),box-shadow .25s ease;transform-origin:bottom center;z-index:1}.hand-card .card-layout{padding:6px 4px}.hand-card:hover{transform:translateY(-6px) scale(1.02);z-index:50}.hand-card.selected{transform:translateY(-16px) scale(1.1);border:2px solid #f39c12;box-shadow:0 20px 35px rgba(243,156,18,.35);z-index:100}.hand-card.owner1-bg{background:linear-gradient(145deg,#fff5eb,#ffe6d5)}.hand-card.owner2-bg{background:linear-gradient(145deg,#eaf7ff,#d9eefb)}.hand-card.fade-out{transition:opacity .15s ease-out;opacity:0;pointer-events:none}@keyframes placeCard{0%{transform:scale(1.4);opacity:.3;box-shadow:0 20px 40px rgba(0,0,0,.2)}50%{transform:scale(1.05);opacity:1}100%{transform:scale(1);box-shadow:0 8px 18px rgba(0,0,0,.06)}}@keyframes flipCardOut{0%{transform:rotateY(0deg) scale(1);filter:brightness(1)}100%{transform:rotateY(90deg) scale(1.1);filter:brightness(1.3)}}@keyframes flipCardIn{0%{transform:rotateY(-90deg) scale(1.1);filter:brightness(1.3)}100%{transform:rotateY(0deg) scale(1);filter:brightness(1)}}@keyframes slideInUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}.online-panel{margin:10px 0;background:rgba(238,242,247,.7);border-radius:36px;padding:12px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border:1px solid rgba(255,255,255,.6)}.online-room-info{font-size:.85rem;font-weight:500;background:#fff;padding:5px 14px;border-radius:40px;display:inline-flex;align-items:center;gap:8px}.footer-note{text-align:center;font-size:.7rem;color:#7d8f9e;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:6px}.online-panel md-outlined-text-field{width:140px;--md-outlined-field-container-height:40px;--md-outlined-field-container-shape:28px;--md-sys-color-primary:#2c5f8a;--md-sys-color-primary-container:#d6e3ff;--md-sys-color-on-primary-container:#001b3f;--md-sys-color-outline:#b0bec5;font-size:.8rem;--md-outlined-field-top-space:6px;--md-outlined-field-bottom-space:6px;margin:0 8px}.online-panel md-outlined-text-field:focus-within{--md-sys-color-primary:#1f4a6e}.online-panel md-outlined-text-field::part(label){font-size:.75rem;font-weight:500}.online-panel>div:first-child{display:flex;align-items:center;flex-wrap:wrap;gap:8px}@media(max-width:700px),(orientation:portrait){.game-layout{flex-direction:column}.board{max-width:none;width:100%}.hand-area{width:100%;margin-top:20px}.cards-hand{grid-template-columns:repeat(3,1fr);gap:10px}.card-left,.card-right{width:24px;font-size:.75rem}.card-emoji{font-size:1.3rem}.card-name-tag{font-size:.5rem;white-space:nowrap;overflow-x:hidden;text-overflow:ellipsis;max-width:100%}}@media(max-width:550px){.game-container{padding:16px}.board{gap:8px}.card-top,.card-bottom,.hand-card .card-top,.hand-card .card-bottom{font-size:.75rem}.cards-hand{gap:8px;padding-top:22px;padding-bottom:30px}.hand-card .card-layout{padding:4px 2px}.card-name-tag{font-size:.45rem;white-space:normal;word-break:break-word;line-height:1.2;padding:1px 2px}.hand-card.selected{transform:translateY(-12px) scale(1.08)}.emoji-toast{padding:16px 20px}.emoji-toast img{width:56px;height:56px}.online-panel md-outlined-text-field{width:120px}}.material-icons{font-size:20px;vertical-align:middle}button .material-icons,.mode-option .material-icons,.turn-badge .material-icons{font-size:18px}h1 .material-icons{font-size:30px}
+        .cards-hand{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-top:18px;padding-bottom:25px;padding-left:6px;padding-right:6px}.card-slot{aspect-ratio:1/1;background:#fff;border-radius:20px;box-shadow:0 8px 18px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.02);position:relative;cursor:pointer;perspective:1000px}.card-layout{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;padding:6px 4px;box-sizing:border-box;background:inherit;border-radius:inherit;transform-style:preserve-3d}.empty-slot{background:#fefefe;box-shadow:inset 0 0 0 2px #e2e8f0,0 4px 8px rgba(0,0,0,.02);display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#b9c3ce}.card-slot.owner1{background:linear-gradient(145deg,#fff5eb,#ffe6d5);box-shadow:0 8px 18px rgba(230,80,0,.15)}.card-slot.owner2{background:linear-gradient(145deg,#eaf7ff,#d9eefb);box-shadow:0 8px 18px rgba(0,120,230,.15)}.card-top,.card-bottom{text-align:center;font-weight:800;font-size:.9rem;margin:0;color:#2c3e4e;line-height:1.2}.card-middle{flex:1;display:flex;justify-content:space-between;align-items:center;gap:4px;margin:2px 0;min-height:0}.card-left,.card-right{font-weight:800;font-size:.8rem;background:rgba(0,0,0,.05);width:26px;text-align:center;border-radius:20px;padding:2px 0;flex-shrink:0;line-height:1.2}.card-emoji{font-size:1.3rem;flex:1;text-align:center;line-height:1;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 2px 4px rgba(0,0,0,.1))}.card-name-tag{font-size:.55rem;font-weight:600;background:rgba(0,0,0,.05);display:inline-block;padding:2px 5px;border-radius:20px;margin-bottom:3px;text-align:center;width:fit-content;margin-left:auto;margin-right:auto;white-space:nowrap}.inf-symbol{font-size:.9rem;font-weight:800;color:#c44536}.hand-card{width:100%;aspect-ratio:1/1;border-radius:20px;box-shadow:0 4px 10px rgba(0,0,0,.06);background:#fff;position:relative;cursor:pointer;transition:transform .25s cubic-bezier(.175,.885,.32,1.275),box-shadow .25s ease;transform-origin:bottom center;z-index:1}.hand-card .card-layout{padding:6px 4px}.hand-card:hover{transform:translateY(-6px) scale(1.02);z-index:50}.hand-card.selected{transform:translateY(-16px) scale(1.1);border:2px solid #f39c12;box-shadow:0 20px 35px rgba(243,156,18,.35);z-index:100}.hand-card.owner1-bg{background:linear-gradient(145deg,#fff5eb,#ffe6d5)}.hand-card.owner2-bg{background:linear-gradient(145deg,#eaf7ff,#d9eefb)}.hand-card.fade-out{transition:opacity .15s ease-out;opacity:0;pointer-events:none}@keyframes placeCard{0%{transform:scale(1.4);opacity:.3;box-shadow:0 20px 40px rgba(0,0,0,.2)}50%{transform:scale(1.05);opacity:1}100%{transform:scale(1);box-shadow:0 8px 18px rgba(0,0,0,.06)}}@keyframes flipCardOut{0%{transform:rotateY(0deg) scale(1);filter:brightness(1)}100%{transform:rotateY(90deg) scale(1.1);filter:brightness(1.3)}}@keyframes flipCardIn{0%{transform:rotateY(-90deg) scale(1.1);filter:brightness(1.3)}100%{transform:rotateY(0deg) scale(1);filter:brightness(1)}}@keyframes slideInUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}.footer-note{text-align:center;font-size:.7rem;color:#7d8f9e;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:6px}.material-icons{font-size:20px;vertical-align:middle}button .material-icons,.mode-option .material-icons,.turn-badge .material-icons{font-size:18px}h1 .material-icons{font-size:30px}
 
         .md3-dialog {
             --md-dialog-container-color: rgba(255, 255, 255, 0.88);
@@ -69,18 +64,6 @@
         .emoji-card.sending { animation: emojiSendPop .3s ease-out forwards; pointer-events: none; }
         @keyframes emojiSendPop { 0%{transform:scale(1);opacity:1} 50%{transform:scale(1.2);opacity:.7;box-shadow:0 0 24px rgba(103,80,164,.3)} 100%{transform:scale(.8);opacity:0} }
 
-        /* 语言选择器样式 */
-        md-outlined-select {
-            --md-outlined-select-text-field-container-height: 48px;
-            --md-outlined-select-text-field-container-shape: 14px;
-            width: 140px;
-            margin-left: auto;
-        }
-        md-outlined-select::part(label) {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-        }
-
         md-switch {
             --md-sys-color-primary: #2c5f8a;
             --md-sys-color-on-primary: #ffffff;
@@ -111,76 +94,114 @@
             --md-slider-label-container-color: #2c5f8a;
             --md-slider-label-label-text-color: #ffffff;
         }
+
+        /* 自定义确认对话框（仿作品集样式） */
+        .custom-dialog-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3); backdrop-filter: blur(6px);
+            z-index: 2000; display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.25s ease-out;
+        }
+        .custom-dialog-overlay.open { opacity: 1; pointer-events: auto; }
+        .custom-dialog-card {
+            background: rgba(255,255,255,0.9); backdrop-filter: blur(20px);
+            border-radius: 36px; padding: 36px 32px 28px;
+            max-width: 400px; width: 90%; text-align: center;
+            box-shadow: 0 32px 64px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.6);
+            transform: translateY(20px); transition: transform 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .custom-dialog-overlay.open .custom-dialog-card { transform: translateY(0); }
+        .dialog-icon { font-size: 48px; margin-bottom: 12px; color: #0066cc; }
+        .dialog-title { font-family: 'Inter', sans-serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; color: #1d1d1f; }
+        .dialog-message { font-size: 0.95rem; color: #5e5e6e; margin-bottom: 28px; line-height: 1.5; }
+        .dialog-actions { display: flex; gap: 12px; justify-content: center; }
+        .dialog-actions .btn-ghost, .dialog-actions .btn-primary {
+            padding: 10px 24px; font-size: 14px; cursor: pointer;
+            border-radius: 40px; font-weight: 600;
+        }
+        .dialog-actions .btn-ghost {
+            background: #fff; border: 1px solid #d0d0d0; color: #1d1d1f;
+        }
+        .dialog-actions .btn-primary {
+            background: #0066cc; border: none; color: #fff;
+            box-shadow: 0 4px 12px rgba(0,102,204,0.2);
+        }
+        .dialog-actions .btn-primary:hover { background: #005bbd; transform: translateY(-2px); }
+        .dialog-actions .btn-ghost:hover { background: #f5f5f7; }
     </style>
 </head>
 <body>
 <div class="game-container" role="main">
     <div class="game-header">
-        <h1><i class="material-icons">grid_on</i> <span id="mainTitle" data-original="数·占 | 九宫幻卡">数·占 | 九宫幻卡</span> <md-icon-button id="settingsButton"><i class="material-icons">settings</i></md-icon-button></h1>
+        <h1><i class="material-icons">grid_on</i> 数·占 | 九宫幻卡</h1>
         <div class="mode-slider-container" id="modeSlider">
             <div class="mode-slider-bg"></div>
             <div class="mode-slider-options">
-                <div class="mode-option" data-mode="twoPlayer"><i class="material-icons">group</i> <span class="mode-text" data-original="双人对决">双人对决</span></div>
-                <div class="mode-option" data-mode="vsAI"><i class="material-icons">smart_toy</i> <span class="mode-text" data-original="人机对战">人机对战</span></div>
-                <div class="mode-option" data-mode="online"><i class="material-icons">language</i> <span class="mode-text" data-original="联机对决">联机对决</span></div>
+                <div class="mode-option" data-mode="twoPlayer"><i class="material-icons">group</i> 双人对决</div>
+                <div class="mode-option" data-mode="vsAI"><i class="material-icons">smart_toy</i> 人机对战</div>
+                <div class="mode-option" data-mode="online"><i class="material-icons">language</i> 联机对决</div>
             </div>
         </div>
     </div>
     <div class="action-group">
-        <button class="reset-btn" id="resetGameBtn"><i class="material-icons">refresh</i> <span class="btn-text" data-original="新的一局">新的一局</span></button>
-        <button class="ai-first-btn" id="aiFirstBtn" style="display:none;"><i class="material-icons">psychology</i> <span class="btn-text" data-original="AI先手">AI先手</span></button>
-    </div>
-    <div id="onlinePanel" style="display:none;" class="online-panel">
-        <div>
-            <button id="createRoomBtn" class="online-action-btn"><i class="material-icons">create_new_folder</i> <span class="btn-text" data-original="创建房间">创建房间</span></button>
-            <md-outlined-text-field id="joinRoomInput" data-original="房间号" value=""></md-outlined-text-field>
-            <button id="joinRoomBtn" class="online-action-btn"><i class="material-icons">login</i> <span class="btn-text" data-original="加入房间">加入房间</span></button>
-        </div>
-        <div id="roomStatus" class="online-room-info"><i class="material-icons">info</i> <span id="roomStatusText" data-original="未加入房间">未加入房间</span></div>
+        <button class="reset-btn" id="resetGameBtn"><i class="material-icons">refresh</i> 新的一局</button>
+        <button class="ai-first-btn" id="aiFirstBtn" style="display:none;"><i class="material-icons">psychology</i> AI先手</button>
     </div>
     <div class="status-area">
-        <div class="turn-indicator"><span id="turnLabel" data-original="当前回合">当前回合</span><div class="turn-badge" id="turnBadge"><i class="material-icons">person</i> <span id="turnPlayer" data-original="玩家 1">玩家 1</span></div></div>
-        <div class="status-message" id="statusMsg"><i class="material-icons">info</i> <span id="statusText" data-original="点击手牌，再点棋盘空格">点击手牌，再点棋盘空格</span></div>
+        <div class="turn-indicator"><span>当前回合</span><div class="turn-badge" id="turnBadge"><i class="material-icons">person</i> 玩家 1</div></div>
+        <div class="status-message" id="statusMsg"><i class="material-icons">info</i> 点击手牌，再点棋盘空格</div>
     </div>
     <div class="game-layout">
         <div class="board" id="board"></div>
         <div class="hand-area" id="handArea">
-            <div class="hand-title"><div class="hand-title-left"><i class="material-icons">style</i> <span id="handTitle" data-original="当前手牌">当前手牌</span></div><button class="emoji-toggle-btn" id="emojiToggleBtn"><i class="material-icons">mood</i></button></div>
+            <div class="hand-title"><div class="hand-title-left"><i class="material-icons">style</i> 当前手牌</div><button class="emoji-toggle-btn" id="emojiToggleBtn"><i class="material-icons">mood</i></button></div>
             <div class="cards-hand" id="handCardsContainer"></div>
         </div>
     </div>
-    <div class="footer-note"><i class="material-icons">psychology_alt</i> <span id="footerNote" data-original="放置卡牌 → 相邻方向比拼，大于则夺取控制权 ✦">放置卡牌 → 相邻方向比拼，大于则夺取控制权 ✦</span></div>
+    <div class="footer-note"><i class="material-icons">psychology_alt</i> 放置卡牌 → 相邻方向比拼，大于则夺取控制权 ✦</div>
 </div>
 
 <md-dialog id="settingsDialog" class="md3-dialog">
-    <div slot="headline"><span id="settingsTitle" data-original="游戏设置">游戏设置</span> <button class="close-btn" onclick="document.getElementById('settingsDialog').close()"><i class="material-icons">close</i></button></div>
+    <div slot="headline">游戏设置 <button class="close-btn" onclick="document.getElementById('settingsDialog').close()"><i class="material-icons">close</i></button></div>
     <form slot="content" id="settingsForm" method="dialog">
-        <div class="settings-item"><label for="chainAttackSwitch"><span data-original="连锁攻击">连锁攻击</span></label><md-switch id="chainAttackSwitch"></md-switch></div>
-        <div class="settings-item"><label for="animStyleSwitch"><span data-original="顺序播放">顺序播放</span></label><md-switch id="animStyleSwitch" checked></md-switch></div>
-        <div class="settings-item"><label for="soundToggle"><span data-original="音效">音效</span></label><md-switch id="soundToggle"></md-switch></div>
-        <div class="settings-item"><label for="killAudioSwitch"><span data-original="击杀音效">击杀音效</span></label><md-switch id="killAudioSwitch"></md-switch></div>
-        <div class="settings-item"><label for="bgmSwitch"><span data-original="背景音乐">背景音乐</span></label><md-switch id="bgmSwitch"></md-switch></div>
-        <div class="settings-item">
-            <label for="langSelect"><span data-original="语言">语言</span></label>
-            <md-outlined-select id="langSelect" aria-label="选择语言"></md-outlined-select>
-        </div>
-        <div class="settings-item slider-container"><label for="demoSlider"><span data-original="演示滑块">演示滑块</span></label><div class="slider-wrapper"><md-slider id="demoSlider" min="0" max="100" value="30" labeled></md-slider></div></div>
+        <div class="settings-item"><label for="chainAttackSwitch">连锁攻击</label><md-switch id="chainAttackSwitch"></md-switch></div>
+        <div class="settings-item"><label for="animStyleSwitch">顺序播放</label><md-switch id="animStyleSwitch" checked></md-switch></div>
+        <div class="settings-item"><label for="soundToggle">音效</label><md-switch id="soundToggle"></md-switch></div>
+        <div class="settings-item"><label for="killAudioSwitch">击杀音效</label><md-switch id="killAudioSwitch"></md-switch></div>
+        <div class="settings-item"><label for="bgmSwitch">背景音乐</label><md-switch id="bgmSwitch"></md-switch></div>
+        <div class="settings-item slider-container"><label for="demoSlider">演示滑块</label><div class="slider-wrapper"><md-slider id="demoSlider" min="0" max="100" value="30" labeled></md-slider></div></div>
     </form>
-    <div slot="actions"><md-text-button form="settingsForm" value="close"><span data-original="关闭">关闭</span></md-text-button></div>
+    <div slot="actions"><md-text-button form="settingsForm" value="close">关闭</md-text-button></div>
 </md-dialog>
 
 <md-dialog id="emojiDialog" class="md3-dialog">
-    <div slot="headline"><span data-original="表情面板">表情面板</span> <button class="close-btn" id="emojiCloseBtn"><i class="material-icons">close</i></button></div>
+    <div slot="headline">表情面板 <button class="close-btn" id="emojiCloseBtn"><i class="material-icons">close</i></button></div>
     <div slot="content"><div class="emoji-grid" id="emojiGrid"></div></div>
-    <div slot="actions"><md-text-button id="emojiCancelBtn"><span data-original="关闭">关闭</span></md-text-button></div>
+    <div slot="actions"><md-text-button id="emojiCancelBtn">关闭</md-text-button></div>
 </md-dialog>
 
 <div class="emoji-toast" id="emojiToast" style="display:none;">
     <img id="toastEmojiImg" src="" alt=""><div class="toast-sender" id="toastSender"></div><div class="toast-emoji-name" id="toastEmojiName"></div>
 </div>
 
+<!-- 自定义联机提示对话框 -->
+<div class="custom-dialog-overlay" id="onlineDialog">
+    <div class="custom-dialog-card">
+        <div class="dialog-icon material-icons">open_in_new</div>
+        <div class="dialog-title">前往联机版</div>
+        <div class="dialog-message">本地版暂不支持联机，是否前往联机版网站？<br>（https://math.youzix.top/）</div>
+        <div class="dialog-actions">
+            <button class="btn-ghost" id="onlineDialogCancel">取消</button>
+            <button class="btn-primary" id="onlineDialogConfirm">前往</button>
+        </div>
+    </div>
+</div>
+
 <script>
     (function(){
+        // ==================== 卡牌数据 ====================
         const CARD_DATA = {
             "四色花": { up:1, left:2, down:3, right:4 },
             "倒·四色花": { up:2, left:3, down:4, right:1 },
@@ -196,106 +217,7 @@
         function formatVal(val) { return val === 9999 ? '<span class="inf-symbol">∞</span>' : val; }
         function getCardEmoji(name) { return CARD_EMOJI[name] || "🎴"; }
 
-        // ===== 多语言系统（动态加载，简体中文为默认回退） =====
-        let langData = {};
-        let currentLang = 'zh';
-        let availableLangs = [];
-        const defaultTexts = new Map();
-        function captureDefaultTexts() {
-            document.querySelectorAll('[data-original]').forEach(el => {
-                const original = el.getAttribute('data-original');
-                if (original) defaultTexts.set(original, original);
-            });
-        }
-        captureDefaultTexts();
-
-        async function loadLanguage(lang) {
-            if (lang === 'zh') { langData = {}; return true; }
-            try {
-                const res = await fetch(`lang/${lang}.json`);
-                if (!res.ok) throw new Error();
-                langData = await res.json();
-                return true;
-            } catch(e) { console.warn(`加载语言 ${lang} 失败，回退简体中文`); langData = {}; return false; }
-        }
-
-        function applyLang(text) {
-            if (langData[text] !== undefined) return langData[text];
-            return defaultTexts.get(text) || text;
-        }
-
-        function updateStaticTexts() {
-            // 普通元素
-            document.querySelectorAll('[data-original]').forEach(el => {
-                const original = el.getAttribute('data-original');
-                if (original) {
-                    const translated = applyLang(original);
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = translated;
-                    else el.textContent = translated;
-                }
-            });
-            // 更新 md-outlined-text-field 的 label
-            document.querySelectorAll('md-outlined-text-field[data-original]').forEach(el => {
-                const original = el.getAttribute('data-original');
-                if (original) el.label = applyLang(original);
-            });
-            updateLangSelectDisplay();
-        }
-
-        function updateLangSelectDisplay() {
-            const select = document.getElementById('langSelect');
-            if (!select) return;
-            Array.from(select.querySelectorAll('md-select-option')).forEach(opt => {
-                const code = opt.value;
-                if (code === 'zh') return;
-                const langInfo = availableLangs.find(l => l.code === code);
-                if (langInfo && langData[langInfo.name]) {
-                    const headlineDiv = opt.querySelector('[slot="headline"]');
-                    if (headlineDiv) headlineDiv.textContent = applyLang(langInfo.name);
-                }
-            });
-        }
-
-        async function loadLanguageList() {
-            try {
-                const res = await apiCall('game_get_languages');
-                if (res.success && res.languages) availableLangs = res.languages;
-                else availableLangs = [];
-            } catch(e) { availableLangs = []; }
-            const select = document.getElementById('langSelect');
-            if (!select) return;
-            select.innerHTML = '';
-            const defaultOption = document.createElement('md-select-option');
-            defaultOption.value = 'zh';
-            defaultOption.innerHTML = '<div slot="headline">简体中文 (默认)</div>';
-            select.appendChild(defaultOption);
-            for (const lang of availableLangs) {
-                const option = document.createElement('md-select-option');
-                option.value = lang.code;
-                option.innerHTML = `<div slot="headline">${lang.name}</div>`;
-                select.appendChild(option);
-            }
-            const savedLang = localStorage.getItem('game_lang') || 'zh';
-            currentLang = savedLang;
-            select.value = currentLang;
-            if (currentLang !== 'zh') await loadLanguage(currentLang);
-            else langData = {};
-            updateStaticTexts();
-            select.addEventListener('change', async (e) => {
-                const newLang = e.target.value;
-                currentLang = newLang;
-                localStorage.setItem('game_lang', newLang);
-                if (newLang !== 'zh') await loadLanguage(newLang);
-                else langData = {};
-                updateStaticTexts();
-                playSound('switch');
-                updateLocalTurnUI();
-                updateOnlineTurnUI();
-                updateOnlinePanelUI();
-            });
-        }
-
-        // ===== 音效系统 =====
+        // ==================== 音效系统 ====================
         let soundEnabled = false;
         let killAudioEnabled = false;
         let bgmEnabled = false;
@@ -378,6 +300,7 @@
         }
         document.body.addEventListener('click', function once() { unlockAudio(); }, { once: true });
 
+        // ==================== 游戏核心逻辑（双人对决 / AI） ====================
         let localGrid = Array(9).fill(null);
         let localHandP1 = [], localHandP2 = [];
         let localCurrentTurn = 1;
@@ -387,23 +310,21 @@
         let aiTimeout = null;
         let chainAttackEnabled = false;
         let sequentialAnimEnabled = true;
+        let currentGameMode = "twoPlayer";  // 'twoPlayer' 或 'vsAI'
 
-        let onlineRoomId = null, onlineMyRole = null, onlineGrid = Array(9).fill(null), onlineMyHand = [], onlineCurrentTurn = 1, onlineGameActive = false, onlineWinner = null, onlineSelectedCardIndex = -1;
-        let eventSource = null, onlineStateHash = '', lastOnlineStatus = null, lastReceivedEmojiKey = null;
-        let currentGameMode = "twoPlayer", emojiList = [];
-
-        const boardDiv = document.getElementById("board"), handContainer = document.getElementById("handCardsContainer"), turnBadge = document.getElementById("turnBadge"), statusMsgDiv = document.getElementById("statusMsg"), resetBtn = document.getElementById("resetGameBtn"), aiFirstBtn = document.getElementById("aiFirstBtn"), modeSlider = document.getElementById("modeSlider"), onlinePanel = document.getElementById("onlinePanel");
+        const boardDiv = document.getElementById("board"), handContainer = document.getElementById("handCardsContainer"), turnBadge = document.getElementById("turnBadge"), statusMsgDiv = document.getElementById("statusMsg"), resetBtn = document.getElementById("resetGameBtn"), aiFirstBtn = document.getElementById("aiFirstBtn"), modeSlider = document.getElementById("modeSlider");
         const emojiDialog = document.getElementById("emojiDialog"), emojiToggleBtn = document.getElementById("emojiToggleBtn"), emojiCloseBtn = document.getElementById("emojiCloseBtn"), emojiCancelBtn = document.getElementById("emojiCancelBtn"), emojiGrid = document.getElementById("emojiGrid");
         const emojiToast = document.getElementById("emojiToast"), toastEmojiImg = document.getElementById("toastEmojiImg"), toastSender = document.getElementById("toastSender"), toastEmojiName = document.getElementById("toastEmojiName");
+        const onlineDialogOverlay = document.getElementById("onlineDialog");
+        const onlineDialogCancel = document.getElementById("onlineDialogCancel");
+        const onlineDialogConfirm = document.getElementById("onlineDialogConfirm");
         let toastTimer = null;
 
         function statusMessage(msg, temp=false) {
-            const finalMsg = applyLang(msg);
-            const html = finalMsg.includes('<i') ? finalMsg : `<i class="material-icons">info</i> ${finalMsg}`;
-            statusMsgDiv.innerHTML = html;
+            statusMsgDiv.innerHTML = `<i class="material-icons">info</i> ${msg}`;
             if (temp) setTimeout(() => {
-                if (statusMsgDiv.innerHTML === html && (currentGameMode !== "online" ? localGameActive : true))
-                    statusMsgDiv.innerHTML = `<i class="material-icons">info</i> ${applyLang("点击手牌，再点棋盘空格")}`;
+                if (statusMsgDiv.innerHTML === `<i class="material-icons">info</i> ${msg}` && localGameActive)
+                    statusMsgDiv.innerHTML = `<i class="material-icons">info</i> 点击手牌，再点棋盘空格`;
             }, 1500);
         }
 
@@ -413,7 +334,7 @@
             if (toastTimer) { clearTimeout(toastTimer); emojiToast.classList.remove('fade-out'); }
             toastEmojiImg.src = `data/webp/${emojiName}.webp`; toastEmojiImg.alt = emojiName;
             toastEmojiName.textContent = emojiName;
-            const sender = isSelf ? applyLang("你发送了表情") : `${applyLang(senderRole === 1 ? "炎之阵" : "水之阵")} ${applyLang("发送了表情")}`;
+            const sender = isSelf ? "你发送了表情" : `${senderRole === 1 ? "炎之阵" : "水之阵"} 发送了表情`;
             toastSender.textContent = sender;
             emojiToast.style.display = 'flex';
             emojiToast.classList.remove('fade-out');
@@ -524,17 +445,6 @@
             }));
         }
 
-        function animateOnlineFlips(flippedIdxs) {
-            const slots = document.querySelectorAll("#board .card-slot");
-            flippedIdxs.forEach(idx => {
-                const slot = slots[idx];
-                if (!slot) return;
-                playSound('flip');
-                slot.style.animation = "flipCardOut 0.2s ease-in forwards";
-                setTimeout(() => { slot.style.animation = "flipCardIn 0.2s ease-out forwards"; }, 200);
-            });
-        }
-
         function localPlaceCard(slotIndex, cardObj, cardIndex) {
             if (!localGameActive || localGrid[slotIndex] !== null) return false;
             if (localCurrentTurn !== 1 && localCurrentTurn !== 2) return false;
@@ -557,7 +467,7 @@
             if (localGrid.every(c => c !== null) || newHand.length === 0) { endLocalGame(); renderLocalHand(true); return true; }
             renderLocalHand(true);
             updateLocalTurnUI();
-            statusMessage(applyLang('回合切换 → ') + applyLang(localCurrentTurn === 1 ? '炎之阵' : '水之阵'));
+            statusMessage(`回合切换 → ${localCurrentTurn === 1 ? '炎之阵' : '水之阵'}`);
             playSound('turn');
             localGameActive = true;
             if (currentGameMode === "vsAI" && localCurrentTurn === 2) setTimeout(() => { if (localGameActive && localCurrentTurn === 2) triggerAITurn(); }, 250);
@@ -568,9 +478,9 @@
             localGameActive = false; localWinnerDeclared = true;
             let p1=0,p2=0;
             localGrid.forEach(c=>{ if(c) c.owner===1?p1++:p2++; });
-            let msg = p1>p2 ? applyLang('🏆 炎之阵获胜！') : (p2>p1 ? applyLang('🏆 水之阵获胜！') : applyLang('🤝 平局'));
+            let msg = p1>p2 ? "🏆 炎之阵获胜！" : (p2>p1 ? "🏆 水之阵获胜！" : "🤝 平局");
             statusMessage(msg);
-            updateTurnBadge('<i class="material-icons">flag</i> ' + applyLang('终局'));
+            updateTurnBadge('<i class="material-icons">flag</i> 终局');
             handContainer.innerHTML = '';
             if (p1 > p2 || p2 > p1) playSound('victory');
             else playSound('draw');
@@ -579,10 +489,8 @@
         function updateLocalTurnUI() {
             let turnName = localCurrentTurn === 1 ? '炎之阵' : '水之阵';
             if (currentGameMode === "vsAI") {
-                if (localCurrentTurn === 1) turnName = applyLang('炎之阵') + applyLang(' (你)');
-                else turnName = applyLang('AI ') + applyLang(turnName);
-            } else {
-                turnName = applyLang(turnName);
+                if (localCurrentTurn === 1) turnName = '炎之阵 (你)';
+                else turnName = 'AI 水之阵';
             }
             const icon = localCurrentTurn === 1 ? 'person' : 'smart_toy';
             updateTurnBadge(`<i class="material-icons">${icon}</i> ${turnName}`);
@@ -592,7 +500,7 @@
             const currentHand = localCurrentTurn === 1 ? localHandP1 : localHandP2;
             if (!localGameActive && localWinnerDeclared) { handContainer.innerHTML = ''; return; }
             if (currentHand.length === 0) {
-                handContainer.innerHTML = '<div style="padding:20px;text-align:center;">' + applyLang('无可用手牌') + '</div>';
+                handContainer.innerHTML = '<div style="padding:20px;text-align:center;">无可用手牌</div>';
                 return;
             }
             if (force) {
@@ -609,10 +517,10 @@
                         if (!localGameActive) return;
                         if (localSelectedCardIndex === idx) {
                             localSelectedCardIndex = -1;
-                            statusMessage(applyLang("已取消选中"));
+                            statusMessage("已取消选中");
                         } else {
                             localSelectedCardIndex = idx;
-                            statusMessage(applyLang("选中「") + card.name + applyLang("」, 点击棋盘放置"));
+                            statusMessage(`选中「${card.name}」, 点击棋盘放置`);
                         }
                         renderLocalHand(false);
                     });
@@ -635,9 +543,9 @@
             initBoardDOM(); renderBoard(localGrid);
             renderLocalHand(true); updateLocalTurnUI();
             if (aiFirst && currentGameMode==="vsAI") {
-                statusMessage(applyLang("🤖 AI先手..."));
+                statusMessage("🤖 AI先手...");
                 triggerAITurn();
-            } else statusMessage(applyLang("新对局！点击手牌再点格子"));
+            } else statusMessage("新对局！点击手牌再点格子");
         }
 
         function getAIMove() {
@@ -672,278 +580,61 @@
             },300);
         }
 
-        // ===== 联机 API =====
-        async function apiCall(action, data={}) {
-            const formData = new URLSearchParams();
-            formData.append("action", action);
-            for(let k in data) formData.append(k, data[k]);
-            const res = await fetch("api.php", { method:"POST", body:formData, credentials: "same-origin" });
-            return await res.json();
+        // 联机对决点击处理：弹出对话框，取消则切换到人机对战，确认则跳转到联机版网站
+        function handleOnlineMode() {
+            // 弹出自定义对话框
+            onlineDialogOverlay.classList.add('open');
         }
 
-        async function createRoom() {
-            const res = await apiCall("game_create_room");
-            if(res.success) {
-                onlineRoomId = res.room_id;
-                onlineMyRole = 1;
-                updateOnlinePanelUI();
-                statusMessage(applyLang("房间创建成功，房间号:") + " " + onlineRoomId + " " + applyLang("等待对手加入..."));
-                startOnlineListener();
-            } else { statusMessage(applyLang("创建房间失败")); }
+        function closeOnlineDialog() {
+            onlineDialogOverlay.classList.remove('open');
         }
 
-        async function joinRoom() {
-            const roomInput = document.getElementById("joinRoomInput");
-            const roomId = roomInput.value.trim();
-            if(!roomId) { statusMessage(applyLang("请输入房间号")); return; }
-            const res = await apiCall("game_join_room", { room_id: roomId });
-            if(res.success) {
-                onlineRoomId = roomId;
-                onlineMyRole = 2;
-                updateOnlinePanelUI();
-                statusMessage(applyLang("加入成功，等待游戏开始..."));
-                startOnlineListener();
-            } else { statusMessage(res.message || applyLang("加入失败")); }
+        function switchToVSAI() {
+            // 切换到人机对战模式
+            currentGameMode = "vsAI";
+            modeSlider.classList.remove("active-twoPlayer", "active-vsAI", "active-online");
+            modeSlider.classList.add("active-vsAI");
+            aiFirstBtn.style.display = "inline-flex";
+            resetLocalGame(false);
         }
 
-        async function leaveRoom() {
-            if(onlineRoomId) await apiCall("game_leave_room", { room_id: onlineRoomId });
-            stopOnlineListener();
-            onlineRoomId = null; onlineMyRole = null;
-            onlineGrid = Array(9).fill(null);
-            onlineMyHand = [];
-            onlineGameActive = false;
-            onlineWinner = null;
-            onlineSelectedCardIndex = -1;
-            lastOnlineStatus = null;
-            lastReceivedEmojiKey = null;
-            onlineStateHash = '';
-            updateOnlinePanelUI();
-            statusMessage(applyLang("已离开房间"));
-            renderBoard(onlineGrid);
-            handContainer.innerHTML = '<div style="padding:20px;text-align:center;"><i class="material-icons">meeting_room</i> ' + applyLang('未加入房间') + '</div>';
-            updateTurnBadge('<i class="material-icons">pause</i> --');
-        }
-
-        function handleOnlineState(state) {
-            const currentStatus = state.status;
-            const statusChangedToPlaying = (lastOnlineStatus === "waiting" && currentStatus === "playing");
-            lastOnlineStatus = currentStatus;
-            if (currentStatus === "waiting") {
-                statusMessage(applyLang("等待对手加入..."));
-                onlineGameActive = false;
-                renderBoard([]);
-                handContainer.innerHTML = '<div style="padding:20px;text-align:center;">' + applyLang("等待对手...") + '</div>';
-                updateTurnBadge('<i class="material-icons">schedule</i> ' + applyLang("等待中"));
-                return;
+        // 绑定联机对话框事件
+        onlineDialogCancel.addEventListener('click', () => {
+            closeOnlineDialog();
+            // 取消后切换到人机对战
+            switchToVSAI();
+        });
+        onlineDialogConfirm.addEventListener('click', () => {
+            closeOnlineDialog();
+            // 前往联机版网站
+            window.open('https://math.youzix.top/', '_blank');
+        });
+        // 点击遮罩关闭
+        onlineDialogOverlay.addEventListener('click', (e) => {
+            if (e.target === onlineDialogOverlay) {
+                closeOnlineDialog();
+                switchToVSAI();
             }
-            const newGrid = state.grid || [];
-            const oldGridStr = JSON.stringify(onlineGrid);
-            const newHandRaw = (onlineMyRole === 1) ? state.player1_hand : state.player2_hand;
-            const newHand = newHandRaw.map(c => getCardObjByName(c.name));
-            let placedIdx = -1; let flippedIdxs = [];
-            if (oldGridStr !== JSON.stringify(newGrid)) {
-                for (let i=0;i<9;i++) {
-                    const oldCell = JSON.parse(oldGridStr)[i];
-                    const newCell = newGrid[i];
-                    if (!oldCell && newCell) placedIdx = i;
-                    else if (oldCell && newCell && oldCell.owner !== newCell.owner) flippedIdxs.push(i);
-                }
-            }
-            onlineGrid = newGrid;
-            onlineCurrentTurn = state.current_turn;
-            onlineGameActive = (state.status === "playing");
-            onlineWinner = state.winner;
-            renderBoard(onlineGrid, placedIdx);
-            if (flippedIdxs.length > 0) {
-                animateOnlineFlips(flippedIdxs);
-                playKillSound(flippedIdxs.length);
-            }
-            const handChanged = (JSON.stringify(onlineMyHand.map(c=>c.name)) !== JSON.stringify(newHand.map(c=>c.name)));
-            onlineMyHand = newHand;
-            if (handChanged || statusChangedToPlaying) renderOnlineHand(true);
-            else renderOnlineHand(false);
-            updateOnlineTurnUI();
-            if (state.last_emoji) handleIncomingEmoji(state);
-            else lastReceivedEmojiKey = null;
-            if(onlineWinner) {
-                let winMsg = onlineWinner === 1 ? applyLang("🔥 炎之阵玩家获胜！") : (onlineWinner === 2 ? applyLang("💧 水之阵玩家获胜！") : applyLang("🤝 平局！"));
-                statusMessage(winMsg);
-                updateTurnBadge('<i class="material-icons">flag</i> ' + applyLang('终局'));
-                handContainer.innerHTML = '<div style="padding:20px;text-align:center;">' + applyLang("游戏结束") + '</div>';
-                stopOnlineListener();
-            } else if(onlineGameActive && onlineCurrentTurn === onlineMyRole) {
-                statusMessage(applyLang("轮到你了，请出牌"));
-            } else if(onlineGameActive) {
-                statusMessage(applyLang("等待对手出牌..."));
-            }
-        }
-
-        function startOnlineListener() {
-            if (eventSource) eventSource.close();
-            const url = `api.php?action=game_listen&room_id=${onlineRoomId}&hash=${onlineStateHash}`;
-            eventSource = new EventSource(url);
-            eventSource.onmessage = function(e) {
-                try {
-                    const data = JSON.parse(e.data);
-                    if (data.error) {
-                        if (data.error === 'not_member' || data.error === 'room_deleted') leaveRoom();
-                        return;
-                    }
-                    if (data.timeout) {
-                        onlineStateHash = data.hash;
-                        return;
-                    }
-                    if (data.state) {
-                        onlineStateHash = data.hash;
-                        handleOnlineState(data.state);
-                    }
-                } catch(err) {}
-            };
-            eventSource.onerror = function() {
-                statusMessage(applyLang("连接中断，正在重连..."), true);
-            };
-        }
-
-        function stopOnlineListener() {
-            if (eventSource) {
-                eventSource.close();
-                eventSource = null;
-            }
-        }
-
-        async function fetchGameState() {
-            if(!onlineRoomId) return;
-            const res = await apiCall("game_get_state", { room_id: onlineRoomId });
-            if(res.success) handleOnlineState(res.state);
-            else if(res.message === "房间不存在") { leaveRoom(); statusMessage(applyLang("房间已失效")); }
-        }
-
-        function renderOnlineHand(force=false) {
-            if (!onlineMyHand.length) {
-                handContainer.innerHTML = '<div style="padding:20px;text-align:center;">' + applyLang("无手牌") + '</div>';
-                return;
-            }
-            if (force) {
-                handContainer.innerHTML = "";
-                const bgClass = onlineMyRole === 1 ? "owner1-bg" : "owner2-bg";
-                onlineMyHand.forEach((card, idx) => {
-                    const div = document.createElement("div");
-                    div.className = `hand-card ${bgClass}`;
-                    if (onlineSelectedCardIndex === idx) div.classList.add("selected");
-                    div.style.animation = `slideInUp 0.3s ease-out ${idx * 0.05}s backwards`;
-                    div.innerHTML = `<div class="card-layout"><div class="card-name-tag">${card.name}</div><div class="card-top">${formatVal(card.up)}</div><div class="card-middle"><div class="card-left">${formatVal(card.left)}</div><div class="card-emoji">${getCardEmoji(card.name)}</div><div class="card-right">${formatVal(card.right)}</div></div><div class="card-bottom">${formatVal(card.down)}</div></div>`;
-                    div.addEventListener("click", (e) => {
-                        e.stopPropagation();
-                        if(!onlineGameActive || onlineCurrentTurn !== onlineMyRole) { statusMessage(applyLang("现在不是你的回合")); return; }
-                        if(onlineSelectedCardIndex === idx) {
-                            onlineSelectedCardIndex = -1;
-                            statusMessage(applyLang("已取消选中"));
-                        } else {
-                            onlineSelectedCardIndex = idx;
-                            statusMessage(applyLang("选中「") + card.name + applyLang("」, 点击棋盘放置"));
-                        }
-                        renderOnlineHand(false);
-                    });
-                    handContainer.appendChild(div);
-                });
-            } else {
-                const cards = handContainer.querySelectorAll('.hand-card');
-                cards.forEach((card, idx) => { card.classList.toggle("selected", onlineSelectedCardIndex === idx); });
-            }
-        }
-
-        async function onlinePlaceCard(slotIndex, cardIndex) {
-            if(!onlineGameActive || onlineCurrentTurn !== onlineMyRole) { statusMessage(applyLang("未到你的回合")); return; }
-            const cards = handContainer.querySelectorAll('.hand-card');
-            if (cards[cardIndex]) cards[cardIndex].classList.add('fade-out');
-            const res = await apiCall("game_place_card", { room_id: onlineRoomId, slot: slotIndex, card_idx: cardIndex });
-            if(res.success) {
-                onlineSelectedCardIndex = -1;
-                await fetchGameState();
-            } else {
-                statusMessage(res.message || applyLang("出牌失败"));
-                if (cards[cardIndex]) cards[cardIndex].classList.remove('fade-out');
-            }
-        }
-
-        function handleIncomingEmoji(state) {
-            if (!state.last_emoji) return;
-            const incoming = state.last_emoji;
-            const key = `${incoming.sender}-${incoming.emoji}-${incoming.time}`;
-            if (lastReceivedEmojiKey === key) return;
-            lastReceivedEmojiKey = key;
-            if (incoming.sender !== onlineMyRole) showEmojiToast(incoming.emoji, incoming.sender, false);
-        }
-
-        function updateOnlineTurnUI() {
-            if(!onlineGameActive) return;
-            updateTurnBadge(onlineCurrentTurn === onlineMyRole ? `<i class="material-icons">whatshot</i> ${applyLang('你的回合')}` : `<i class="material-icons">water_drop</i> ${applyLang('对手回合')}`);
-        }
-
-        function updateOnlinePanelUI() {
-            const statusDiv = document.getElementById("roomStatus");
-            if(onlineRoomId) {
-                statusDiv.innerHTML = `<i class="material-icons">meeting_room</i> ${applyLang('房间:')} ${onlineRoomId} (${onlineMyRole===1?applyLang('房主'):applyLang('成员')}) <button id="leaveRoomBtn" class="online-action-btn" style="margin-left:8px;"><i class="material-icons">exit_to_app</i> ${applyLang('离开')}</button>`;
-                const leaveBtn = document.getElementById("leaveRoomBtn");
-                if(leaveBtn) leaveBtn.onclick = () => leaveRoom();
-            } else {
-                statusDiv.innerHTML = '<i class="material-icons">info</i> ' + applyLang('未加入房间');
-            }
-        }
-
-        function onSlotClick(index) {
-            if(currentGameMode === "online") {
-                if(onlineSelectedCardIndex !== -1 && onlineMyHand[onlineSelectedCardIndex]) onlinePlaceCard(index, onlineSelectedCardIndex);
-                else statusMessage(applyLang("请先点击手牌选中一张卡牌"), true);
-            } else {
-                if(localSelectedCardIndex === -1) { statusMessage(applyLang("请先点击手牌选中一张卡牌"), true); return; }
-                const hand = localCurrentTurn === 1 ? localHandP1 : localHandP2;
-                if(localSelectedCardIndex >= hand.length) return;
-                localPlaceCard(index, hand[localSelectedCardIndex], localSelectedCardIndex);
-            }
-        }
+        });
 
         function setGameMode(mode) {
+            if (mode === "online") {
+                handleOnlineMode();
+                return;
+            }
             currentGameMode = mode;
             modeSlider.classList.remove("active-twoPlayer","active-vsAI","active-online");
             modeSlider.classList.add(`active-${mode}`);
             aiFirstBtn.style.display = mode === "vsAI" ? "inline-flex" : "none";
-            onlinePanel.style.display = mode === "online" ? "block" : "none";
-            if(mode === "online") {
-                if(aiTimeout) clearTimeout(aiTimeout);
-                stopOnlineListener();
-                onlineRoomId = null; onlineMyRole = null;
-                onlineGrid = Array(9).fill(null);
-                onlineMyHand = [];
-                onlineGameActive = false;
-                onlineWinner = null;
-                onlineSelectedCardIndex = -1;
-                lastOnlineStatus = null;
-                lastReceivedEmojiKey = null;
-                onlineStateHash = '';
-                renderBoard(onlineGrid);
-                handContainer.innerHTML = '<div style="padding:20px;text-align:center;"><i class="material-icons">link_off</i> ' + applyLang('未加入房间') + '</div>';
-                updateTurnBadge('<i class="material-icons">language</i> ' + applyLang('联机对决'));
-                statusMessage(applyLang("联机模式：创建或加入房间开始对战"));
-                updateOnlinePanelUI();
-            } else {
-                stopOnlineListener();
-                resetLocalGame(false);
-            }
+            resetLocalGame(false);
         }
 
-        async function loadEmojiList() {
-            try { const res = await apiCall('game_get_emojis'); if(res.success) { emojiList = res.emojis; renderEmojiGrid(); } } catch(e){}
-        }
-
+        // 表情功能（写死列表）
+        const emojiList = ["这么强", "嘿嘿嘿哈", "诶嘿", "吃惊", "爱你"];
         function renderEmojiGrid() {
             if(!emojiGrid) return;
             emojiGrid.innerHTML = '';
-            if(emojiList.length===0) {
-                emojiGrid.innerHTML = '<div style="grid-column:span 3;text-align:center;padding:20px;color:#5e5e6e;">' + applyLang('暂无表情') + '</div>';
-                return;
-            }
             emojiList.forEach(name => {
                 const card = document.createElement('div');
                 card.className = 'emoji-card';
@@ -958,54 +649,51 @@
             });
         }
 
-        async function sendEmoji(cardElement, emojiName) {
+        function sendEmoji(cardElement, emojiName) {
             cardElement.classList.add('sending');
-            showEmojiToast(emojiName, onlineMyRole, true);
+            showEmojiToast(emojiName, 1, true);
             playSound('emoji');
-            if(currentGameMode==='online' && onlineRoomId) {
-                try {
-                    const res = await apiCall('game_send_emoji', { room_id: onlineRoomId, emoji: emojiName });
-                    if(!res.success) statusMessage(applyLang(`发送失败: ${res.message}`), true);
-                } catch(e) { statusMessage(applyLang('发送表情出错'), true); }
-            }
             setTimeout(() => { closeEmojiPanel(); setTimeout(() => cardElement.classList.remove('sending'), 100); }, 300);
         }
 
-        function openEmojiPanel() { if(emojiList.length===0) loadEmojiList().then(()=>emojiDialog.show()); else emojiDialog.show(); }
+        function openEmojiPanel() { emojiDialog.show(); }
         function closeEmojiPanel() { emojiDialog.close(); }
 
+        function onSlotClick(index) {
+            if(localSelectedCardIndex === -1) { statusMessage("请先点击手牌选中一张卡牌", true); return; }
+            const hand = localCurrentTurn === 1 ? localHandP1 : localHandP2;
+            if(localSelectedCardIndex >= hand.length) return;
+            localPlaceCard(index, hand[localSelectedCardIndex], localSelectedCardIndex);
+        }
+
+        // 设置面板开关
         const chainAttackSwitch = document.getElementById('chainAttackSwitch');
         const animStyleSwitch = document.getElementById('animStyleSwitch');
         const soundToggle = document.getElementById('soundToggle');
         const killAudioSwitch = document.getElementById('killAudioSwitch');
         const bgmSwitch = document.getElementById('bgmSwitch');
 
-        if (animStyleSwitch) { sequentialAnimEnabled = animStyleSwitch.selected; animStyleSwitch.addEventListener('change', e => { sequentialAnimEnabled = e.target.selected; statusMessage(sequentialAnimEnabled ? applyLang('顺序播放模式') : applyLang('同步播放模式'), true); playSound('switch'); }); }
-        if (chainAttackSwitch) chainAttackSwitch.addEventListener('change', e => { chainAttackEnabled = e.target.selected; statusMessage(chainAttackEnabled ? applyLang('⚡ 连锁攻击已开启') : applyLang('连锁攻击已关闭'), true); playSound('switch'); });
+        if (animStyleSwitch) { sequentialAnimEnabled = animStyleSwitch.selected; animStyleSwitch.addEventListener('change', e => { sequentialAnimEnabled = e.target.selected; statusMessage(sequentialAnimEnabled ? '顺序播放模式' : '同步播放模式', true); playSound('switch'); }); }
+        if (chainAttackSwitch) chainAttackSwitch.addEventListener('change', e => { chainAttackEnabled = e.target.selected; statusMessage(chainAttackEnabled ? '⚡ 连锁攻击已开启' : '连锁攻击已关闭', true); playSound('switch'); });
         if (soundToggle) soundToggle.addEventListener('change', e => { soundEnabled = e.target.selected; playSound('switch'); });
-        if (killAudioSwitch) { killAudioSwitch.selected = killAudioEnabled; killAudioSwitch.addEventListener('change', e => { killAudioEnabled = e.target.selected; statusMessage(killAudioEnabled ? applyLang('击杀音效已开启') : applyLang('击杀音效已关闭'), true); playSound('switch'); }); }
-        if (bgmSwitch) { const savedBGM = localStorage.getItem('game_bgm') === 'true'; bgmEnabled = savedBGM; bgmSwitch.selected = bgmEnabled; bgmSwitch.addEventListener('change', e => { bgmEnabled = e.target.selected; localStorage.setItem('game_bgm', bgmEnabled); if (bgmEnabled) { initBGM(); startBGM(); } else { stopBGM(); } playSound('switch'); statusMessage(bgmEnabled ? applyLang('背景音乐已开启') : applyLang('背景音乐已关闭'), true); }); }
+        if (killAudioSwitch) { killAudioSwitch.selected = killAudioEnabled; killAudioSwitch.addEventListener('change', e => { killAudioEnabled = e.target.selected; statusMessage(killAudioEnabled ? '击杀音效已开启' : '击杀音效已关闭', true); playSound('switch'); }); }
+        if (bgmSwitch) { const savedBGM = localStorage.getItem('game_bgm') === 'true'; bgmEnabled = savedBGM; bgmSwitch.selected = bgmEnabled; bgmSwitch.addEventListener('change', e => { bgmEnabled = e.target.selected; localStorage.setItem('game_bgm', bgmEnabled); if (bgmEnabled) { initBGM(); startBGM(); } else { stopBGM(); } playSound('switch'); statusMessage(bgmEnabled ? '背景音乐已开启' : '背景音乐已关闭', true); }); }
 
         emojiToggleBtn?.addEventListener('click', openEmojiPanel);
         emojiCloseBtn?.addEventListener('click', () => { playSound('click'); closeEmojiPanel(); });
         emojiCancelBtn?.addEventListener('click', () => { playSound('click'); closeEmojiPanel(); });
         document.getElementById("settingsButton")?.addEventListener('click', () => { playSound('click'); document.getElementById("settingsDialog").show(); });
-        document.getElementById("createRoomBtn")?.addEventListener('click', () => { playSound('click'); createRoom(); });
-        document.getElementById("joinRoomBtn")?.addEventListener('click', () => { playSound('click'); joinRoom(); });
-        resetBtn.addEventListener('click', () => { playSound('click'); if(currentGameMode==="online") leaveRoom(); else resetLocalGame(false); });
+        resetBtn.addEventListener('click', () => { playSound('click'); resetLocalGame(false); });
         aiFirstBtn.addEventListener('click', () => { playSound('click'); resetLocalGame(true); });
         document.querySelectorAll(".mode-option").forEach(o=>o.addEventListener('click', () => { playSound('click'); setGameMode(o.dataset.mode); }));
 
+        // 初始化
         preloadKillSounds();
         if (bgmEnabled) { initBGM(); startBGM(); }
-
-        loadLanguageList().then(() => {
-            updateStaticTexts();
-            initBoardDOM();
-            resetLocalGame(false);
-            setGameMode("twoPlayer");
-            loadEmojiList();
-        });
+        initBoardDOM();
+        resetLocalGame(false);
+        setGameMode("twoPlayer");
+        renderEmojiGrid();
     })();
 </script>
 </body>
