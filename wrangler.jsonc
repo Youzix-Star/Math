@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "shu",
+  "compatibility_date": "2026-05-30",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "src"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
