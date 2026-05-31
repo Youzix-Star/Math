@@ -116,6 +116,38 @@
             border: 1px dashed rgba(44, 95, 138, 0.2);
         }
         .outbound-link-box i { font-size: 16px; color: #2c5f8a; }
+
+        /* 胜利烟花效果 */
+        @keyframes firework {
+            0% {
+                transform: translate(0, 0) scale(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .firework-particle {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: firework 1.2s cubic-bezier(0.05, 0.7, 0.1, 1.0) forwards;
+        }
+
+        .victory-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9998;
+        }
     </style>
 </head>
 <body>
@@ -188,6 +220,9 @@
 <div class="emoji-toast" id="emojiToast" style="display:none;">
     <img id="toastEmojiImg" src="" alt=""><div class="toast-sender" id="toastSender"></div><div class="toast-emoji-name" id="toastEmojiName"></div>
 </div>
+
+<!-- 胜利动画叠加层 -->
+<div class="victory-overlay" id="victoryOverlay"></div>
 
 <script>
     (function(){
@@ -315,6 +350,9 @@
         const linkDialogCancel = document.getElementById('linkDialogCancel');
         const linkDialogProceed = document.getElementById('linkDialogProceed');
         
+        // 获取胜利动画叠加层
+        const victoryOverlay = document.getElementById('victoryOverlay');
+        
         let toastTimer = null;
 
         function statusMessage(msg, temp=false) {
@@ -340,6 +378,46 @@
                 emojiToast.classList.add('fade-out');
                 setTimeout(() => { emojiToast.style.display = 'none'; }, 250);
             }, 1500);
+        }
+
+        // ===== 胜利烟花效果 =====
+        function createFireworks() {
+            const colors = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#ff6b9d', '#c792ea', '#ff9f43', '#00d2d3'];
+            const fireworksCount = 25;
+            
+            for (let i = 0; i < fireworksCount; i++) {
+                setTimeout(() => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight * 0.7;
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    const particleCount = 15 + Math.floor(Math.random() * 15);
+                    
+                    for (let j = 0; j < particleCount; j++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'firework-particle';
+                        const angle = (Math.PI * 2 * j) / particleCount;
+                        const distance = 50 + Math.random() * 100;
+                        const tx = Math.cos(angle) * distance;
+                        const ty = Math.sin(angle) * distance;
+                        particle.style.cssText = `
+                            left: ${x}px;
+                            top: ${y}px;
+                            background: ${color};
+                            width: ${3 + Math.random() * 5}px;
+                            height: ${3 + Math.random() * 5}px;
+                            --tx: ${tx}px;
+                            --ty: ${ty}px;
+                            animation-delay: ${Math.random() * 0.15}s;
+                        `;
+                        victoryOverlay.appendChild(particle);
+                    }
+                }, i * 120);
+            }
+            
+            // 清理粒子
+            setTimeout(() => {
+                victoryOverlay.innerHTML = '';
+            }, fireworksCount * 120 + 1500);
         }
 
         function renderBoard(grid, placedIdx = -1, skipFlipIds = []) {
@@ -480,7 +558,10 @@
             statusMessage(msg);
             updateTurnBadge('<i class="material-icons">flag</i> 终局');
             handContainer.innerHTML = '';
-            if (p1 > p2 || p2 > p1) playSound('victory');
+            if (p1 > p2 || p2 > p1) {
+                playSound('victory');
+                createFireworks(); // 播放胜利烟花
+            }
             else playSound('draw');
         }
 
