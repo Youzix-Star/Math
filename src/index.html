@@ -25,7 +25,7 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box;user-select:none}body{background:linear-gradient(145deg,#e9eff5 0%,#dfe6ed 100%);font-family:'Inter',system-ui,-apple-system,sans-serif;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}.game-container{max-width:1100px;width:100%;background:rgba(255,255,255,.92);border-radius:48px;box-shadow:0 25px 45px -12px rgba(0,0,0,.15),0 2px 6px rgba(0,0,0,.02);padding:20px 24px 28px;transition:all .2s ease;border:1px solid rgba(255,255,255,.5);position:relative}.game-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px}h1{font-size:1.7rem;font-weight:700;background:linear-gradient(135deg,#1e2f3c,#2c4e6e);background-clip:text;-webkit-background-clip:text;color:transparent;display:flex;align-items:center;gap:10px}h1 i{font-size:32px;color:#2c5f8a;background:0 0;-webkit-background-clip:unset;background-clip:unset}.mode-slider-container{background:#eef2f8;border-radius:48px;padding:4px;width:300px;position:relative;display:flex;cursor:default;box-shadow:inset 0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(255,255,255,.8)}.mode-slider-options{display:flex;width:100%;position:relative;z-index:2}.mode-option{flex:1;text-align:center;padding:6px 0;font-weight:500;font-size:.75rem;border-radius:40px;cursor:pointer;color:#5a6874;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .2s;z-index:3}.mode-option i{font-size:18px}.mode-slider-container.active-twoPlayer .mode-option[data-mode=twoPlayer],.mode-slider-container.active-vsAI .mode-option[data-mode=vsAI],.mode-slider-container.active-online .mode-option[data-mode=online]{color:#fff;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,.1);transform:scale(1.03)}.mode-slider-bg{position:absolute;top:4px;left:4px;width:calc(33.33% - 4px);height:calc(100% - 8px);background:linear-gradient(135deg,#2c5f8a,#1f4a6e);border-radius:40px;transition:transform .25s cubic-bezier(.2,.9,.4,1.1);z-index:1;box-shadow:0 2px 6px rgba(0,0,0,.1)}.mode-slider-container.active-vsAI .mode-slider-bg{transform:translateX(100%)}.mode-slider-container.active-online .mode-slider-bg{transform:translateX(200%)}.action-group{display:flex;justify-content:space-between;gap:12px;margin-bottom:16px}.reset-btn,.ai-first-btn{background:#f0f4fa;border:none;font-weight:500;font-size:.8rem;padding:8px 18px;border-radius:40px;color:#1f4a6e;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s ease;box-shadow:0 1px 2px rgba(0,0,0,.05)}.reset-btn i,.ai-first-btn i{font-size:18px}.reset-btn:hover,.ai-first-btn:hover{background:#e6edf5;transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.05)}.reset-btn:active,.ai-first-btn:active{transform:translateY(1px)}.status-area{background:rgba(248,250,252,.8);border-radius:60px;padding:8px 20px;margin:12px 0 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border:1px solid rgba(255,255,255,.6)}.turn-indicator{display:flex;align-items:center;gap:10px;font-weight:500;font-size:.85rem}.turn-badge{background:#eef2f7;padding:5px 16px;border-radius:32px;font-weight:700;font-size:.85rem;color:#1e2a3a;display:inline-flex;align-items:center;gap:6px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 1px 3px rgba(0,0,0,.05)}.turn-badge i{font-size:16px}.status-message{background:#ffffffcc;padding:5px 16px;border-radius:32px;font-size:.8rem;font-weight:500;color:#2c3e4e;max-width:320px;line-height:1.3;display:flex;align-items:center;gap:6px}.game-layout{display:flex;flex-direction:row;gap:24px;align-items:flex-start}.board{flex:1.2;min-width:240px;max-width:380px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.hand-area{flex:1;min-width:240px;background:rgba(255,255,255,.5);border-radius:32px;padding:14px;box-shadow:0 8px 20px rgba(0,0,0,.04);border:1px solid rgba(255,255,255,.7)}.hand-title{margin-bottom:14px;font-size:.85rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;color:#2c5f8a}.hand-title-left{display:flex;align-items:center;gap:4px}.hand-title i{font-size:20px;vertical-align:middle;margin-right:4px}.emoji-toggle-btn{background:0 0;border:none;color:#2c5f8a;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:4px;border-radius:50%;transition:background .2s}.emoji-toggle-btn:hover{background:rgba(44,95,138,.1)}.emoji-toggle-btn i{font-size:24px}
         .emoji-toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(160deg, rgba(255,255,255,0.9) 0%, rgba(245,248,255,0.85) 100%);backdrop-filter:blur(12px);border-radius:32px;padding:24px 32px;box-shadow:0 30px 50px -15px rgba(0,0,0,.18),0 0 0 1px rgba(255,255,255,.6),0 0 0 4px rgba(44,95,138,.04);display:flex;flex-direction:column;align-items:center;gap:12px;z-index:1000;animation:toastPopIn .25s cubic-bezier(.05,.7,.1,1.0);pointer-events:none;border:none;color:#1e3a5f}.emoji-toast.fade-out{animation:toastFadeOut .25s ease-out forwards}@keyframes toastPopIn{0%{opacity:0;transform:translate(-50%,-48%) scale(0.92)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}@keyframes toastFadeOut{0%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-60%) scale(0.95)}}.emoji-toast img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(44,95,138,.15))}.emoji-toast .toast-sender{font-family:'Inter',sans-serif;font-weight:700;font-size:1.1rem;color:#1f4a6e;letter-spacing:-.01em}.emoji-toast .toast-emoji-name{font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;color:#2c5f8a;margin-top:-4px}
-        .cards-hand{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-top:18px;padding-bottom:25px;padding-left:6px;padding-right:6px}.card-slot{aspect-ratio:1/1;background:#fff;border-radius:20px;box-shadow:0 8px 18px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.02);position:relative;cursor:pointer;perspective:1000px}.card-layout{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;padding:6px 4px;box-sizing:border-box;background:inherit;border-radius:inherit;transform-style:preserve-3d}.empty-slot{background:#fefefe;box-shadow:inset 0 0 0 2px #e2e8f0,0 4px 8px rgba(0,0,0,.02);display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#b9c3ce}.card-slot.owner1{background:linear-gradient(145deg,#fff5eb,#ffe6d5);box-shadow:0 8px 18px rgba(230,80,0,.15)}.card-slot.owner2{background:linear-gradient(145deg,#eaf7ff,#d9eefb);box-shadow:0 8px 18px rgba(0,120,230,.15)}.card-top,.card-bottom{text-align:center;font-weight:800;font-size:.9rem;margin:0;color:#2c3e4e;line-height:1.2}.card-middle{flex:1;display:flex;justify-content:space-between;align-items:center;gap:4px;margin:2px 0;min-height:0}.card-left,.card-right{font-weight:800;font-size:.8rem;background:rgba(0,0,0,.05);width:26px;text-align:center;border-radius:20px;padding:2px 0;flex-shrink:0;line-height:1.2}.card-emoji{font-size:1.3rem;flex:1;text-align:center;line-height:1;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 2px 4px rgba(0,0,0,.1))}.card-name-tag{font-size:.55rem;font-weight:600;background:rgba(0,0,0,.05);display:inline-block;padding:2px 5px;border-radius:20px;margin-bottom:3px;text-align:center;width:fit-content;margin-left:auto;margin-right:auto;white-space:nowrap}.inf-symbol{font-size:.9rem;font-weight:800;color:#c44536}.hand-card{width:100%;aspect-ratio:1/1;border-radius:20px;box-shadow:0 4px 10px rgba(0,0,0,.06);background:#fff;position:relative;cursor:pointer;transition:transform .25s cubic-bezier(.175,.885,.32,1.275),box-shadow .25s ease;transform-origin:bottom center;z-index:1}.hand-card .card-layout{padding:6px 4px}.hand-card:hover{transform:translateY(-6px) scale(1.02);z-index:50}.hand-card.selected{transform:translateY(-16px) scale(1.1);border:2px solid #f39c12;box-shadow:0 20px 35px rgba(243,156,18,.35);z-index:100}.hand-card.owner1-bg{background:linear-gradient(145deg,#fff5eb,#ffe6d5)}.hand-card.owner2-bg{background:linear-gradient(145deg,#eaf7ff,#d9eefb)}.hand-card.fade-out{transition:opacity .15s ease-out;opacity:0;pointer-events:none}@keyframes placeCard{0%{transform:scale(1.4);opacity:.3;box-shadow:0 20px 40px rgba(0,0,0,.2)}50%{transform:scale(1.05);opacity:1}100%{transform:scale(1);box-shadow:0 8px 18px rgba(0,0,0,.06)}}@keyframes flipCardOut{0%{transform:rotateY(0deg) scale(1);filter:brightness(1)}100%{transform:rotateY(90deg) scale(1.1);filter:brightness(1.3)}}@keyframes flipCardIn{0%{transform:rotateY(-90deg) scale(1.1);filter:brightness(1.3)}100%{transform:rotateY(0deg) scale(1);filter:brightness(1)}}@keyframes slideInUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}.footer-note{text-align:center;font-size:.7rem;color:#7d8f9e;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:6px}@media(max-width:700px),(orientation:portrait){.game-layout{flex-direction:column}.board{max-width:none;width:100%}.hand-area{width:100%;margin-top:20px}.cards-hand{grid-template-columns:repeat(3,1fr);gap:10px}.card-left,.card-right{width:24px;font-size:.75rem}.card-emoji{font-size:1.3rem}.card-name-tag{font-size:.5rem;white-space:nowrap;overflow-x:hidden;text-overflow:ellipsis;max-width:100%}}@media(max-width:550px){.game-container{padding:16px}.board{gap:8px}.card-top,.card-bottom,.hand-card .card-top,.hand-card .card-bottom{font-size:.75rem}.cards-hand{gap:8px;padding-top:22px;padding-bottom:30px}.hand-card .card-layout{padding:4px 2px}.card-name-tag{font-size:.45rem;white-space:normal;word-break:break-word;line-height:1.2;padding:1px 2px}.hand-card.selected{transform:translateY(-12px) scale(1.08)}.emoji-toast{padding:16px 20px}.emoji-toast img{width:56px;height:56px}}.material-icons{font-size:20px;vertical-align:middle}button .material-icons,.mode-option .material-icons,.turn-badge .material-icons{font-size:18px}h1 .material-icons{font-size:30px}
+        .cards-hand{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-top:18px;padding-bottom:25px;padding-left:6px;padding-right:6px}.card-slot{aspect-ratio:1/1;background:#fff;border-radius:20px;box-shadow:0 8px 18px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.02);position:relative;cursor:pointer;perspective:1000px}.card-layout{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;padding:6px 4px;box-sizing:border-box;background:inherit;border-radius:inherit;transform-style:preserve-3d}.empty-slot{background:#fefefe;box-shadow:inset 0 0 0 2px #e2e8f0,0 4px 8px rgba(0,0,0,.02);display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#b9c3ce}.card-slot.owner1{background:linear-gradient(145deg,#fff5eb,#ffe6d5);box-shadow:0 8px 18px rgba(230,80,0,.15)}.card-slot.owner2{background:linear-gradient(145deg,#eaf7ff,#d9eefb);box-shadow:0 8px 18px rgba(0,120,230,.15)}.card-top,.card-bottom{text-align:center;font-weight:800;font-size:.9rem;margin:0;color:#2c3e4e;line-height:1.2}.card-middle{flex:1;display:flex;justify-content:space-between;align-items:center;gap:4px;margin:2px 0;min-height:0}.card-left,.card-right{font-weight:800;font-size:.8rem;background:rgba(0,0,0,.05);width:26px;text-align:center;border-radius:20px;padding:2px 0;flex-shrink:0;line-height:1.2}.card-emoji{font-size:1.3rem;flex:1;text-align:center;line-height:1;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 2px 4px rgba(0,0,0,.1))}.card-name-tag{font-size:.55rem;font-weight:600;background:rgba(0,0,0,.05);display:inline-block;padding:2px 5px;border-radius:20px;margin-bottom:3px;text-align:center;width:fit-content;margin-left:auto;margin-right:auto;white-space:nowrap}.inf-symbol{font-size:.9rem;font-weight:800;color:#c44536}.hand-card{width:100%;aspect-ratio:1/1;border-radius:20px;box-shadow:0 4px 10px rgba(0,0,0,.06);background:#fff;position:relative;cursor:pointer;transition:transform .25s cubic-bezier(.175,.885,.32,1.275),box-shadow .25s ease;transform-origin:bottom center;z-index:1}.hand-card .card-layout{padding:6px 4px}.hand-card:hover{transform:translateY(-6px) scale(1.02);z-index:50}.hand-card.selected{transform:translateY(-16px) scale(1.1);border:2px solid #f39c12;box-shadow:0 20px 35px rgba(243,156,18,.35);z-index:100}.hand-card.owner1-bg{background:linear-gradient(145deg,#fff5eb,#ffe6d5)}.hand-card.owner2-bg{background:linear-gradient(145deg,#eaf7ff,#d9eefb)}.hand-card.fade-out{transition:opacity .15s ease-out;opacity:0;pointer-events:none}@keyframes placeCard{0%{transform:scale(1.4);opacity:.3;box-shadow:0 20px 40px rgba(0,0,0,.2)}50%{transform:scale(1.05);opacity:1}100%{transform:scale(1);box-shadow:0 8px 18px rgba(0,0,0,.06)}}@keyframes flipCardOut{0%{transform:rotateY(0deg) scale(1);filter:brightness(1)}100%{transform:rotateY(90deg) scale(1.1);filter:brightness(1.3)}}@keyframes flipCardIn{0%{transform:rotateY(-90deg) scale(1.1);filter:brightness(1.3)}100%{transform:rotateY(0deg) scale(1);filter:brightness(1)}}@keyframes slideInUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}.footer-note{text-align:center;font-size:.7rem;color:#7d8f9e;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}@media(max-width:700px),(orientation:portrait){.game-layout{flex-direction:column}.board{max-width:none;width:100%}.hand-area{width:100%;margin-top:20px}.cards-hand{grid-template-columns:repeat(3,1fr);gap:10px}.card-left,.card-right{width:24px;font-size:.75rem}.card-emoji{font-size:1.3rem}.card-name-tag{font-size:.5rem;white-space:nowrap;overflow-x:hidden;text-overflow:ellipsis;max-width:100%}}@media(max-width:550px){.game-container{padding:16px}.board{gap:8px}.card-top,.card-bottom,.hand-card .card-top,.hand-card .card-bottom{font-size:.75rem}.cards-hand{gap:8px;padding-top:22px;padding-bottom:30px}.hand-card .card-layout{padding:4px 2px}.card-name-tag{font-size:.45rem;white-space:normal;word-break:break-word;line-height:1.2;padding:1px 2px}.hand-card.selected{transform:translateY(-12px) scale(1.08)}.emoji-toast{padding:16px 20px}.emoji-toast img{width:56px;height:56px}}.material-icons{font-size:20px;vertical-align:middle}button .material-icons,.mode-option .material-icons,.turn-badge .material-icons{font-size:18px}h1 .material-icons{font-size:30px}
 
         .md3-dialog {
             --md-dialog-container-color: rgba(255, 255, 255, 0.88);
@@ -99,6 +99,28 @@
             --md-slider-label-container-color: #2c5f8a;
             --md-slider-label-label-text-color: #ffffff;
         }
+
+        /* ===== 音频包选择器 ===== */
+        .settings-label-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; }
+        .settings-label-col { display: flex; flex-direction: column; gap: 2px; }
+        .settings-desc { font-size: .72rem; color: #7d8f9e; font-weight: 400; }
+        .preview-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(44,95,138,.1); border: none; color: #1f4a6e; font-weight: 600; font-size: .78rem; padding: 6px 14px; border-radius: 40px; cursor: pointer; transition: all .2s ease; font-family: 'Inter', sans-serif; }
+        .preview-btn:hover { background: rgba(44,95,138,.18); transform: translateY(-1px); }
+        .preview-btn:active { transform: translateY(0); }
+        .preview-btn i { font-size: 16px; }
+        .preview-btn.previewing { animation: previewPulse 1s ease infinite; }
+        @keyframes previewPulse { 0%,100%{opacity:1} 50%{opacity:.55} }
+        .audio-pack-list { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+        .audio-pack-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #fff; border-radius: 20px; padding: 10px 16px; box-shadow: 0 1px 4px rgba(0,0,0,.05); border: 1px solid rgba(0,0,0,.05); cursor: pointer; transition: all .2s ease; }
+        .audio-pack-row:hover { border-color: rgba(44,95,138,.35); box-shadow: 0 4px 14px rgba(44,95,138,.10); transform: translateY(-1px); }
+        .audio-pack-row.selected { border-color: rgba(44,95,138,.55); background: linear-gradient(145deg, rgba(44,95,138,.08), rgba(44,95,138,.03)); box-shadow: 0 4px 14px rgba(44,95,138,.14); }
+        .audio-pack-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+        .audio-pack-name { font-weight: 700; font-size: .95rem; color: #1e2a3a; }
+        .audio-pack-desc { font-size: .72rem; color: #7d8f9e; }
+        md-radio { --md-sys-color-primary: #2c5f8a; --md-sys-color-on-primary: #ffffff; --md-radio-unselected-icon-color: #8a97a6; --md-radio-unselected-hover-icon-color: #2c5f8a; --md-radio-unselected-focus-icon-color: #2c5f8a; --md-radio-unselected-pressed-icon-color: #2c5f8a; }
+        .footer-pack { display: inline-flex; align-items: center; gap: 4px; background: rgba(44,95,138,.1); color: #1f4a6e; padding: 3px 12px; border-radius: 40px; font-weight: 600; cursor: pointer; transition: all .2s ease; border: 1px solid rgba(44,95,138,.15); }
+        .footer-pack:hover { background: rgba(44,95,138,.18); transform: translateY(-1px); }
+        .footer-pack i { font-size: 14px; }
 
         /* 出站提醒链接样式优化，融入 MD3 标准 */
         .outbound-link-box {
@@ -178,7 +200,7 @@
             <div class="cards-hand" id="handCardsContainer"></div>
         </div>
     </div>
-    <div class="footer-note"><i class="material-icons">psychology_alt</i> <span>放置卡牌 → 相邻方向比拼，大于则夺取控制权 ✦</span></div>
+    <div class="footer-note"><i class="material-icons">psychology_alt</i> <span>放置卡牌 → 相邻方向比拼，大于则夺取控制权 ✦</span><span class="footer-pack" id="footerPackTag" title="当前音频包 · 点击切换"><i class="material-icons">music_note</i><span id="footerPackName">Mini</span></span></div>
 </div>
 
 <md-dialog id="settingsDialog" class="md3-dialog">
@@ -189,6 +211,25 @@
         <div class="settings-item"><label for="soundToggle"><span>音效</span></label><md-switch id="soundToggle"></md-switch></div>
         <div class="settings-item"><label for="killAudioSwitch"><span>击杀音效</span></label><md-switch id="killAudioSwitch"></md-switch></div>
         <div class="settings-item"><label for="bgmSwitch"><span>背景音乐</span></label><md-switch id="bgmSwitch"></md-switch></div>
+        <div class="settings-item slider-container">
+            <div class="settings-label-row">
+                <div class="settings-label-col">
+                    <label for="audioPackGroup"><span>音频包</span></label>
+                    <span class="settings-desc">连杀音效 + 背景音乐 成套切换</span>
+                </div>
+                <button class="preview-btn" id="previewAudioBtn" type="button"><i class="material-icons">play_circle</i>试听</button>
+            </div>
+            <div class="audio-pack-list" id="audioPackGroup">
+                <div class="audio-pack-row" data-pack="Mini">
+                    <span class="audio-pack-text"><span class="audio-pack-name">Mini</span><span class="audio-pack-desc">紧凑轻快 · 默认配置</span></span>
+                    <md-radio name="audio-pack" value="Mini" checked></md-radio>
+                </div>
+                <div class="audio-pack-row" data-pack="Fly_tiger">
+                    <span class="audio-pack-text"><span class="audio-pack-name">Fly_tiger</span><span class="audio-pack-desc">全新配置 · 虎年同款</span></span>
+                    <md-radio name="audio-pack" value="Fly_tiger"></md-radio>
+                </div>
+            </div>
+        </div>
         <div class="settings-item slider-container"><label for="demoSlider"><span>演示滑块</span></label><div class="slider-wrapper"><md-slider id="demoSlider" min="0" max="100" value="30" labeled></md-slider></div></div>
     </form>
     <div slot="actions"><md-text-button form="settingsForm" value="close"><span>关闭</span></md-text-button></div>
@@ -245,6 +286,11 @@
         function formatVal(val) { return val === 9999 ? '<span class="inf-symbol">∞</span>' : val; }
         function getCardEmoji(name) { return CARD_EMOJI[name] || "🎴"; }
 
+        // ===== 音频包系统（Mini / Fly_tiger 两套配置）=====
+        const AUDIO_PACKS = ["Mini", "Fly_tiger"];
+        let audioPack = "Mini";
+        function getAudioPackPath() { return `data/music/${audioPack}`; }
+
         // ===== 音效系统 =====
         let soundEnabled = false;
         let killAudioEnabled = false;
@@ -263,7 +309,7 @@
             for (let count in killSoundFiles) {
                 const file = killSoundFiles[count];
                 try {
-                    const response = await fetch(`data/music/${file}`);
+                    const response = await fetch(`${getAudioPackPath()}/${file}`);
                     if (!response.ok) continue;
                     const arrayBuffer = await response.arrayBuffer();
                     const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
@@ -289,7 +335,7 @@
         }
         function initBGM() {
             if (bgmAudio) { bgmAudio.pause(); bgmAudio = null; }
-            bgmAudio = new Audio('data/music/music.ogg');
+            bgmAudio = new Audio(`${getAudioPackPath()}/music.ogg`);
             bgmAudio.loop = true;
             bgmAudio.preload = 'auto';
         }
@@ -766,6 +812,92 @@
         resetBtn.addEventListener('click', () => { playSound('click'); resetLocalGame(false); });
         aiFirstBtn.addEventListener('click', () => { playSound('click'); resetLocalGame(true); });
         document.querySelectorAll(".mode-option").forEach(o=>o.addEventListener('click', () => { setGameMode(o.dataset.mode); }));
+
+        // ===== 音频包：状态同步 / 切换 / 试听 =====
+        function syncAudioPackUI() {
+            document.querySelectorAll('md-radio[name="audio-pack"]').forEach(r => {
+                r.checked = (r.value === audioPack);
+            });
+            document.querySelectorAll('.audio-pack-row').forEach(row => {
+                row.classList.toggle('selected', row.dataset.pack === audioPack);
+            });
+            const footerName = document.getElementById('footerPackName');
+            if (footerName) footerName.textContent = audioPack;
+        }
+
+        function applyAudioPack(newPack) {
+            if (!AUDIO_PACKS.includes(newPack)) return;
+            const changed = (newPack !== audioPack);
+            audioPack = newPack;
+            localStorage.setItem('game_audio_pack', audioPack);
+            syncAudioPackUI();
+            if (changed) {
+                // 清空旧的击杀音效缓存并重新预载新套装
+                Object.keys(killAudioBuffers).forEach(k => delete killAudioBuffers[k]);
+                preloadKillSounds();
+                // 若 BGM 正在播放，则切到新套装后重播
+                if (bgmEnabled) { initBGM(); startBGM(); }
+                statusMessage(`🎵 已切换音频包：${audioPack}`, true);
+                playSound('switch');
+            }
+        }
+
+        // 页面加载时恢复上次选择的音频包（需在 preloadKillSounds 之前执行）
+        (function restoreAudioPack() {
+            const savedPack = localStorage.getItem('game_audio_pack');
+            if (savedPack && AUDIO_PACKS.includes(savedPack)) audioPack = savedPack;
+            syncAudioPackUI();
+        })();
+
+        // 点击音频包卡片（触屏 / 点击均稳定触发）
+        document.querySelectorAll('.audio-pack-row').forEach(row => {
+            row.addEventListener('click', () => {
+                const radio = row.querySelector('md-radio');
+                if (!radio) return;
+                if (!radio.checked) { radio.checked = true; applyAudioPack(radio.value); }
+                else statusMessage(`当前音频包：${audioPack}`, true);
+            });
+        });
+
+        // 单选按钮（支持键盘方向键操作）
+        document.querySelectorAll('md-radio[name="audio-pack"]').forEach(r => {
+            r.addEventListener('change', () => { if (r.checked) applyAudioPack(r.value); });
+        });
+
+        // 试听当前音频包的背景音乐
+        let previewAudio = null;
+        const previewBtn = document.getElementById('previewAudioBtn');
+        if (previewBtn) previewBtn.addEventListener('click', () => {
+            playSound('click');
+            try {
+                if (previewAudio) { previewAudio.pause(); previewAudio = null; }
+                const audio = new Audio(`${getAudioPackPath()}/music.ogg`);
+                previewAudio = audio;
+                audio.volume = 0.75;
+                const stopPreview = () => {
+                    previewBtn.classList.remove('previewing');
+                    audio.pause();
+                    if (previewAudio === audio) previewAudio = null;
+                };
+                audio.play().then(() => {
+                    previewBtn.classList.add('previewing');
+                    statusMessage(`▶ 试听中：${audioPack} 背景音乐`, true);
+                }).catch(() => {
+                    statusMessage(`⚠ 未找到 ${audioPack} 的音乐文件`, true);
+                });
+                audio.onended = stopPreview;
+                audio.onerror = stopPreview;
+                setTimeout(stopPreview, 10000); // 试听最长 10 秒
+            } catch (err) {
+                statusMessage('⚠ 试听失败', true);
+            }
+        });
+
+        // 底部音频包标签 → 一键打开设置
+        document.getElementById('footerPackTag')?.addEventListener('click', () => {
+            playSound('click');
+            document.getElementById('settingsDialog').show();
+        });
 
         preloadKillSounds();
         if (bgmEnabled) { initBGM(); startBGM(); }
