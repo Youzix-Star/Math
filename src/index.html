@@ -118,9 +118,6 @@
         .audio-pack-name { font-weight: 700; font-size: .95rem; color: #1e2a3a; }
         .audio-pack-desc { font-size: .72rem; color: #7d8f9e; }
         md-radio { --md-sys-color-primary: #2c5f8a; --md-sys-color-on-primary: #ffffff; --md-radio-unselected-icon-color: #8a97a6; --md-radio-unselected-hover-icon-color: #2c5f8a; --md-radio-unselected-focus-icon-color: #2c5f8a; --md-radio-unselected-pressed-icon-color: #2c5f8a; }
-        .footer-pack { display: inline-flex; align-items: center; gap: 4px; background: rgba(44,95,138,.1); color: #1f4a6e; padding: 3px 12px; border-radius: 40px; font-weight: 600; cursor: pointer; transition: all .2s ease; border: 1px solid rgba(44,95,138,.15); }
-        .footer-pack:hover { background: rgba(44,95,138,.18); transform: translateY(-1px); }
-        .footer-pack i { font-size: 14px; }
 
         /* 出站提醒链接样式优化，融入 MD3 标准 */
         .outbound-link-box {
@@ -200,7 +197,7 @@
             <div class="cards-hand" id="handCardsContainer"></div>
         </div>
     </div>
-    <div class="footer-note"><i class="material-icons">psychology_alt</i> <span>放置卡牌 → 相邻方向比拼，大于则夺取控制权 ✦</span><span class="footer-pack" id="footerPackTag" title="当前音频包 · 点击切换"><i class="material-icons">music_note</i><span id="footerPackName">Mini</span></span></div>
+    <div class="footer-note"><i class="material-icons">psychology_alt</i> <span>放置卡牌 → 相邻方向比拼，大于则夺取控制权 ✦</span></div>
 </div>
 
 <md-dialog id="settingsDialog" class="md3-dialog">
@@ -217,7 +214,7 @@
                     <label for="audioPackGroup"><span>音频包</span></label>
                     <span class="settings-desc">连杀音效 + 背景音乐 成套切换</span>
                 </div>
-                <button class="preview-btn" id="previewAudioBtn" type="button"><i class="material-icons">play_circle</i>试听</button>
+                <button class="preview-btn" id="previewAudioBtn" type="button" title="随机试听一套连杀音效"><i class="material-icons">play_circle</i>试听音效</button>
             </div>
             <div class="audio-pack-list" id="audioPackGroup">
                 <div class="audio-pack-row" data-pack="Mini">
@@ -821,8 +818,6 @@
             document.querySelectorAll('.audio-pack-row').forEach(row => {
                 row.classList.toggle('selected', row.dataset.pack === audioPack);
             });
-            const footerName = document.getElementById('footerPackName');
-            if (footerName) footerName.textContent = audioPack;
         }
 
         function applyAudioPack(newPack) {
@@ -864,14 +859,20 @@
             r.addEventListener('change', () => { if (r.checked) applyAudioPack(r.value); });
         });
 
-        // 试听当前音频包的背景音乐
+        // 试听：随机播放当前音频包的连杀音效（BGM 不参与试听）
         let previewAudio = null;
+        let lastPreviewIdx = -1;
         const previewBtn = document.getElementById('previewAudioBtn');
         if (previewBtn) previewBtn.addEventListener('click', () => {
             playSound('click');
             try {
                 if (previewAudio) { previewAudio.pause(); previewAudio = null; }
-                const audio = new Audio(`${getAudioPackPath()}/music.ogg`);
+                // 随机选一条连杀音效，尽量不与上一次重复
+                let idx;
+                do { idx = 1 + Math.floor(Math.random() * 5); } while (idx === lastPreviewIdx);
+                lastPreviewIdx = idx;
+                const file = killSoundFiles[idx];
+                const audio = new Audio(`${getAudioPackPath()}/${file}`);
                 previewAudio = audio;
                 audio.volume = 0.75;
                 const stopPreview = () => {
@@ -881,9 +882,9 @@
                 };
                 audio.play().then(() => {
                     previewBtn.classList.add('previewing');
-                    statusMessage(`▶ 试听中：${audioPack} 背景音乐`, true);
+                    statusMessage(`▶ 试听：${audioPack} · ${file}`, true);
                 }).catch(() => {
-                    statusMessage(`⚠ 未找到 ${audioPack} 的音乐文件`, true);
+                    statusMessage(`⚠ 未找到 ${audioPack} 的音频文件`, true);
                 });
                 audio.onended = stopPreview;
                 audio.onerror = stopPreview;
@@ -891,12 +892,6 @@
             } catch (err) {
                 statusMessage('⚠ 试听失败', true);
             }
-        });
-
-        // 底部音频包标签 → 一键打开设置
-        document.getElementById('footerPackTag')?.addEventListener('click', () => {
-            playSound('click');
-            document.getElementById('settingsDialog').show();
         });
 
         preloadKillSounds();
